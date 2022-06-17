@@ -16,10 +16,15 @@ const myList = document.querySelector('#myList');
 const addAlarm = document.querySelector('.setAlarm')
 
 
-const alarmList = [];  // Stores all the alarms being set 
+let alarmList = [];  // Stores all the alarms being set 
 // let count =1;
 
-
+window.onload = function () {
+    if (localStorage.alarmArray && localStorage.alarmArray != '[]') {
+        alarmList = JSON.parse(localStorage.alarmArray);
+        alarmList.forEach(e => showNewAlarm(e))
+    }
+}
 // Plays the alarm audio at correct time
 function ringing(now) {
     audio.play();
@@ -68,14 +73,15 @@ function clearAlarm() {
 // removes an alarm from the unordered list and the webpage when "Delete Alarm" is clicked
 myList.addEventListener('click', e => {
     console.log("removing element")
-    if(e.target.classList.contains("deleteAlarm")){
-      
+    if (e.target.classList.contains("deleteAlarm")) {
+
         e.target.parentElement.remove();
         localStorage.removeItem();
-        localStorage.setItem('alarmArray',alarmList);
+        localStorage.alarmArray = JSON.stringify(alarmList);
 
 
-    }    
+
+    }
 })
 
 
@@ -85,26 +91,26 @@ remove = (value) => {
     alarmList.length = 0;                  // Clear contents
     alarmList.push.apply(alarmList, newList);
     localStorage.removeItem(newList);
-    localStorage.setItem('alarmArray',alarmList);
+    localStorage.alarmArray = JSON.stringify(alarmList);
 
-    
+
     console.log("newList", newList);
     console.log("alarmList", alarmList);
 }
 
 
 // Adds newAlarm to the unordered list as a new list item on webpage
-function showNewAlarm(newAlarm){
+function showNewAlarm(newAlarm) {
 
-   
-        const html =`
+
+    const html = `
         <li class = "time-list">        
             <span class="time">${newAlarm}</span>
             <button class="deleteAlarm time-control" id="delete-button" onclick = "remove(this.value)" value=${newAlarm}>Delete Alarm</button>       
         </li>`
-        myList.innerHTML += html
-        // localStorage.setItem('alarmArray',newAlarm);
-   
+    myList.innerHTML += html
+    // localStorage.setItem('alarmArray',newAlarm);
+
 };
 
 
@@ -135,8 +141,7 @@ addAlarm.addEventListener('submit', e => {
     if (isNaN(newAlarm)) {
         if (!alarmList.includes(newAlarm)) {
             alarmList.push(newAlarm);
-            // localStorage.setItem('newAlarm',newAlarm);
-            localStorage.setItem('alarmArray',alarmList);
+            localStorage.alarmArray = JSON.stringify(alarmList);
 
             console.log(alarmList);
             console.log(alarmList.length);
