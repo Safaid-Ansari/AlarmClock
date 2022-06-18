@@ -25,6 +25,8 @@ window.onload = function () {
         alarmList.forEach(e => showNewAlarm(e))
     }
 }
+
+
 // Plays the alarm audio at correct time
 function ringing(now) {
     audio.play();
@@ -106,7 +108,7 @@ function showNewAlarm(newAlarm) {
             <button class="deleteAlarm time-control" id="delete-button" onclick = "remove(this.value)" value=${newAlarm}>Delete Alarm</button>       
         </li>`
     myList.innerHTML += html
-    // localStorage.setItem('alarmArray',newAlarm);
+    
 
 };
 
