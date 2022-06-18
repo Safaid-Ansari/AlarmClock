@@ -1,6 +1,8 @@
 const display = document.getElementById('clock');
 
 
+
+
 // set audio for alarm
 const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3');
 audio.loop = true;
@@ -67,7 +69,12 @@ function clearAlarm() {
 myList.addEventListener('click', e=> {
     console.log("removing element")
     if(e.target.classList.contains("deleteAlarm")){
+      
         e.target.parentElement.remove();
+        localStorage.removeItem();
+        localStorage.setItem('alarmArray',alarmList);
+
+
     }    
 })
 
@@ -77,6 +84,9 @@ remove = (value) => {
     let newList = alarmList.filter((time) => time != value);
     alarmList.length = 0;                  // Clear contents
     alarmList.push.apply(alarmList, newList);
+    localStorage.removeItem(newList);
+    localStorage.setItem('alarmArray',alarmList);
+
     
     console.log("newList", newList);
     console.log("alarmList", alarmList);
@@ -85,13 +95,21 @@ remove = (value) => {
 
 // Adds newAlarm to the unordered list as a new list item on webpage
 function showNewAlarm(newAlarm){
-    const html =`
-    <li class = "time-list">        
-        <span class="time">${newAlarm}</span>
-        <button class="deleteAlarm time-control" id="delete-button" onclick = "remove(this.value)" value=${newAlarm}>Delete Alarm</button>       
-    </li>`
-    myList.innerHTML += html
+
+   
+        const html =`
+        <li class = "time-list">        
+            <span class="time">${newAlarm}</span>
+            <button class="deleteAlarm time-control" id="delete-button" onclick = "remove(this.value)" value=${newAlarm}>Delete Alarm</button>       
+        </li>`
+        myList.innerHTML += html
+        // localStorage.setItem('alarmArray',newAlarm);
+   
 };
+
+
+
+
 
 
 // event to set a new alarm whenever the form is submitted 
@@ -117,6 +135,9 @@ addAlarm.addEventListener('submit', e=> {
     if(isNaN(newAlarm)){
         if(!alarmList.includes(newAlarm)){
             alarmList.push(newAlarm);
+            // localStorage.setItem('newAlarm',newAlarm);
+            localStorage.setItem('alarmArray',alarmList);
+
             console.log(alarmList);
             console.log(alarmList.length);
             showNewAlarm(newAlarm);
