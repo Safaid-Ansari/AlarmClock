@@ -20,7 +20,7 @@ let alarmList = [];  // Stores all the alarms being set
 // let count =1;
 
 window.onload = function () {
-    if (localStorage.alarmArray && localStorage.alarmArray != '[]') {
+    if (localStorage.alarmArray != '[]') {
         alarmList = JSON.parse(localStorage.alarmArray);
         alarmList.forEach(e => showNewAlarm(e))
     }
