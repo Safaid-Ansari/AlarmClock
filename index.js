@@ -154,13 +154,3 @@ addAlarm.addEventListener('submit', e => {
 // calls updateTime() every second
 setInterval(updateTime, 1000);
 
-/* 
-// getData
-if (localStorage.data && localStorage.data != '[]') {
-    let getData = JSON.parse(localStorage.data);
-}
-
-
-//setData
-localStorage.data = JSON.stringify(this.data); 
-*/
