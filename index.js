@@ -76,9 +76,6 @@ myList.addEventListener('click', e => {
     if (e.target.classList.contains("deleteAlarm")) {
 
         e.target.parentElement.remove();
-        localStorage.removeItem();
-        localStorage.alarmArray = JSON.stringify(alarmList);
-
 
 
     }
@@ -90,7 +87,7 @@ remove = (value) => {
     let newList = alarmList.filter((time) => time != value);
     alarmList.length = 0;                  // Clear contents
     alarmList.push.apply(alarmList, newList);
-    localStorage.removeItem(newList);
+    // localStorage.removeItem(newList);    
     localStorage.alarmArray = JSON.stringify(alarmList);
 
 
