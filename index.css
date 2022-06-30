@@ -23,9 +23,9 @@ body {
 }
 
 /* set color for heading 3 */
-.alarm-heading h3 {
+.alarm-heading  {
 
-    color: azure;
+   /* font-size: 20px; */
 }
 
 
@@ -37,7 +37,7 @@ body {
 }
 
 .alarm-heading {
-    color: black;
+    /* color: black; */
     margin-bottom: 20px;
     padding-top: 50px;
 }
@@ -157,3 +157,28 @@ body {
     height: 22px;
     color: whitesmoke;
 }
+
+
+
+@media screen and (max-width: 800px) {
+    body {
+      background-color: rgb(38, 91, 74);
+    }
+    .container{
+        width: 421px;
+        padding: 10px;
+    }
+    .time-display{
+
+        margin-left: 90px;
+    }
+    #myList li{
+        margin-left: -121px;
+    }
+    .alarm-heading {
+        font-size: 20px;
+        width: 500px;
+        margin-left: -30px;
+    }
+
+  }
