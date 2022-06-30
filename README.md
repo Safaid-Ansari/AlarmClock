@@ -1,4 +1,4 @@
-# AlarmClock-in-Seconds-
+## AlarmClock-in-Seconds-
 
 
 This is a complete Front-end based Project trying to replicate Alarm Clock . This project uses the local storage  for accessing the past set alarm .
@@ -12,12 +12,13 @@ The website has 1 pages
 Check out here :- https://github.com/Safaid-Ansari/AlarmClock-in-Seconds-.git
 
 
-#Acknowledgements 
+##Acknowledgements 
+
 Huge thanks to Stack Overflow, Google and Youtube for helping me throughout the project. This is my first big project and it would not have been possible without their guidance.
 
 
 
-#Features
+##Features
 
 • You can Set the  Alarm 
 • You can delete the Alarm 
