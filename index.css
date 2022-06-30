@@ -23,9 +23,9 @@ body {
 }
 
 /* set color for heading 3 */
-.alarm-heading  {
+.alarm-heading  h3 {
 
-   /* font-size: 20px; */
+   font-size: 20px;
 }
 
 
