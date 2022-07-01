@@ -19,6 +19,7 @@ const addAlarm = document.querySelector('.setAlarm')
 let alarmList = [];  // Stores all the alarms being set 
 // let count =1;
 
+// show alarm on home page 
 window.onload = function () {
     if (localStorage.alarmArray != '[]') {
         alarmList = JSON.parse(localStorage.alarmArray);
@@ -79,7 +80,7 @@ myList.addEventListener('click', e => {
 
         e.target.parentElement.remove();
 
-
+        
     }
 })
 
@@ -157,4 +158,6 @@ addAlarm.addEventListener('submit', e => {
 
 // calls updateTime() every second
 setInterval(updateTime, 1000);
+
+
 

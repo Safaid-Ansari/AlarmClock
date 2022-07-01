@@ -158,7 +158,29 @@ body {
     color: whitesmoke;
 }
 
+/* @media screen and (max-width: 1180px) {
+    body {
+      background-color: rgb(38, 91, 74);
+    }
+    .container{
+        width: 342px;
+        padding: 16px;
+        margin-left: -320px;
+    }
+    .time-display{
 
+        margin-left: 60px;
+    }
+    #myList li{
+        margin-left: -317px;
+    }
+    .alarm-heading {
+        font-size: 20px;
+        width: 500px;
+        margin-left: -235px;
+    }
+
+  } */
 
 @media screen and (max-width: 800px) {
     body {
@@ -182,3 +204,5 @@ body {
     }
 
   }
+
+  
