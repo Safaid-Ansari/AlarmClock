@@ -1,4 +1,4 @@
-## AlarmClock-in-Seconds-
+## AlarmClock
 
 
 This is a complete Front-end based Project trying to replicate Alarm Clock . This project uses the local storage  for accessing the past set alarm .
@@ -9,7 +9,7 @@ The website has 1 pages
 
 1. Homepage - Displays all recent set alarm and current time  
 
-Check out here :- https://github.com/Safaid-Ansari/AlarmClock-in-Seconds-.git
+Check out here :- https://safaid-ansari.github.io/AlarmClock/
 
 
 ##Acknowledgements 
